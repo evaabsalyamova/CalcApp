@@ -8,6 +8,21 @@ const CalcBlock: React.FunctionComponent = () => {
   const [result, setResult] = useState<number>();
   const [option, setOption] = useState<string>("+");
 
+  const handleEqualButtonClick = () => {
+    if (option === "+") {
+      setResult(Number(number) + Number(number2));
+    }
+    if (option === "-") {
+      setResult(Number(number) - Number(number2));
+    }
+    if (option === "*") {
+      setResult(Number(number) * Number(number2));
+    }
+    if (option === "/") {
+      setResult(Number(number) / Number(number2));
+    }
+  };
+
   return (
     <div className="containerCalcBlock">
       <input
@@ -23,24 +38,7 @@ const CalcBlock: React.FunctionComponent = () => {
         onChange={(enteredNum) => setNumber2(enteredNum.target.value)}
         value={number2}
       />
-      <button
-        onClick={() => {
-          if (option === "+") {
-            setResult(Number(number) + Number(number2));
-          }
-          if (option === "-") {
-            setResult(Number(number) - Number(number2));
-          }
-          if (option === "*") {
-            setResult(Number(number) * Number(number2));
-          }
-          if (option === "/") {
-            setResult(Number(number) / Number(number2));
-          }
-        }}
-      >
-        =
-      </button>
+      <button onClick={handleEqualButtonClick}>=</button>
       {result && <div>{result}</div>}
     </div>
   );
