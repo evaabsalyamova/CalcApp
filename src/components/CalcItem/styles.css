@@ -1,0 +1,9 @@
+.calcHeader {
+   display: flex;
+   gap: 10px
+}
+
+.calcButtons {
+   display: flex;
+   gap: 5px
+}
