@@ -2,14 +2,22 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 
 export interface ICalc {
-  value1: number;
+  id: number;
+  value1: string;
   symbol: string;
-  value2: number;
+  value2: string;
   result: number;
 }
 
-export interface IAddCalculationAction {
-  payload: ICalc;
+interface ICalcPayload {
+  value1: string;
+  symbol: string;
+  value2: string;
+  result: number;
+}
+
+interface IAddCalculationAction {
+  payload: ICalcPayload;
   type: string;
 }
 
@@ -25,6 +33,7 @@ const CalcSlice = createSlice({
         symbol: action.payload.symbol,
         value2: action.payload.value2,
         result: action.payload.result,
+        id: Math.floor(Math.random() * 100),
       });
     },
   },

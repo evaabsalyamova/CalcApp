@@ -1,14 +1,21 @@
 import { useState } from "react";
 import "./styles.css";
 import OptionBlock from "../OptionBlock";
+import { addCalculation, useAppDispatch } from "../../redux";
 
 const CalcBlock: React.FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+
   const [number, setNumber] = useState<string>();
   const [number2, setNumber2] = useState<string>();
   const [result, setResult] = useState<number>();
   const [option, setOption] = useState<string>("+");
 
   const handleEqualButtonClick = () => {
+    if (!number || !number2) {
+      return;
+    }
+
     if (option === "+") {
       setResult(Number(number) + Number(number2));
     }
@@ -21,12 +28,24 @@ const CalcBlock: React.FunctionComponent = () => {
     if (option === "/") {
       setResult(Number(number) / Number(number2));
     }
+
+    if (result) {
+      dispatch(
+        addCalculation({
+          value1: number,
+          symbol: option,
+          value2: number2,
+          result,
+        })
+      );
+    }
   };
 
   return (
-    <div className="containerCalcBlock">
+    <div className="calcBlockContainer">
       <input
         placeholder="Value"
+        type="number"
         onChange={(enteredNum) => setNumber(enteredNum.target.value)}
         value={number}
       />
@@ -35,6 +54,7 @@ const CalcBlock: React.FunctionComponent = () => {
       </div>
       <input
         placeholder="Value"
+        type="number"
         onChange={(enteredNum) => setNumber2(enteredNum.target.value)}
         value={number2}
       />
