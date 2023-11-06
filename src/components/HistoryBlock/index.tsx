@@ -7,7 +7,7 @@ const HistoryBlock: React.FunctionComponent = () => {
 
   return (
     <div className="historyBlockContainer">
-      <div>History</div>
+      <div className="historyTitle">History</div>
       {calcList && (
         <div>
           {calcList.map((calc) => (
