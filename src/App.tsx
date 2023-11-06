@@ -6,7 +6,7 @@ import HistoryBlock from "./components/HistoryBlock";
 function App() {
   return (
     <div className="App">
-      <span>Your calc</span>
+      <span className="titleApp">Your calc</span>
       <div className="container">
         <HistoryBlock />
         <CalcBlock />
