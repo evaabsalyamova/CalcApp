@@ -21,6 +21,11 @@ interface IAddCalculationAction {
   type: string;
 }
 
+interface IDeleteCalcAction {
+  payload: { id: number };
+  type: string;
+}
+
 const initialState: ICalc[] = [];
 
 const CalcSlice = createSlice({
@@ -36,10 +41,13 @@ const CalcSlice = createSlice({
         id: Math.floor(Math.random() * 100),
       });
     },
+    deleteCalc: (state, action: IDeleteCalcAction) => {
+      return state.filter((calc) => calc.id !== action.payload.id);
+    },
   },
 });
 
-export const { addCalculation } = CalcSlice.actions;
+export const { addCalculation, deleteCalc } = CalcSlice.actions;
 
 export const store = configureStore({
   reducer: {
