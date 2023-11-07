@@ -1,9 +1,18 @@
 .calcHeader {
    display: flex;
-   gap: 10px
+   justify-content: space-between;
+   margin: 3px;
+   border-radius: 8px;
+   background-color: rgba(63, 47, 152, 0.4);
 }
 
 .calcButtons {
    display: flex;
    gap: 5px
+}
+
+.calcTitle {
+   display: flex;
+   align-items: center;
+   font-family: Inter;
 }

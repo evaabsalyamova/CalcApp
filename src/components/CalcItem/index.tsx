@@ -1,5 +1,6 @@
+import { useDispatch } from "react-redux";
 import { icons } from "../../assets/icon";
-import { ICalc } from "../../redux";
+import { ICalc, deleteCalc } from "../../redux";
 import "./styles.css";
 
 interface IProps {
@@ -7,6 +8,12 @@ interface IProps {
 }
 
 const CalcItem: React.FunctionComponent<IProps> = ({ calc }) => {
+  const dispatch = useDispatch();
+
+  const handleDeleteButtonClick = (): void => {
+    dispatch(deleteCalc({ id: calc.id }));
+  };
+
   return (
     <>
       <div className="calcHeader">
@@ -14,8 +21,8 @@ const CalcItem: React.FunctionComponent<IProps> = ({ calc }) => {
           {`${calc.value1} ${calc.symbol} ${calc.value2} = ${calc.result}`}
         </div>
         <div className="calcButtons">
-          <div>{icons.checkReady}</div>
-          <div>{icons.delete}</div>
+          <div>{icons.showResult}</div>
+          <div onClick={handleDeleteButtonClick}>{icons.delete}</div>
         </div>
       </div>
     </>
