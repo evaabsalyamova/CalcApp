@@ -8,7 +8,7 @@ const CalcBlock: React.FunctionComponent = () => {
 
   const [number, setNumber] = useState<string>();
   const [number2, setNumber2] = useState<string>();
-  const [result, setResult] = useState<number>();
+  const [result, setResult] = useState<string>();
   const [option, setOption] = useState<string>("+");
 
   useEffect(() => {
@@ -34,16 +34,16 @@ const CalcBlock: React.FunctionComponent = () => {
     }
 
     if (option === "+") {
-      setResult(Number(number) + Number(number2));
+      setResult((Number(number) + Number(number2)).toString());
     }
     if (option === "-") {
-      setResult(Number(number) - Number(number2));
+      setResult((Number(number) - Number(number2)).toString());
     }
     if (option === "*") {
-      setResult(Number(number) * Number(number2));
+      setResult((Number(number) * Number(number2)).toString());
     }
     if (option === "/") {
-      setResult(Number(number) / Number(number2));
+      setResult((Number(number) / Number(number2)).toString());
     }
   };
 

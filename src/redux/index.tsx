@@ -6,14 +6,14 @@ export interface ICalc {
   value1: string;
   symbol: string;
   value2: string;
-  result: number;
+  result: string;
 }
 
 interface ICalcPayload {
   value1: string;
   symbol: string;
   value2: string;
-  result: number;
+  result: string;
 }
 
 interface IAddCalculationAction {
