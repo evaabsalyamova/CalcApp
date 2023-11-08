@@ -2,13 +2,17 @@
    display: flex;
    justify-content: space-between;
    margin: 3px;
-   border-radius: 8px;
-   background-color: rgba(63, 47, 152, 0.4);
+   /* background-color: rgba(63, 47, 152, 0.4); */
+   border-radius: 10px;
+   background: #F4F2FF;
+   padding: 5px;
 }
 
 .calcButtons {
    display: flex;
-   gap: 5px
+   gap: 5px;
+   height: 20px;
+
 }
 
 .calcTitle {
