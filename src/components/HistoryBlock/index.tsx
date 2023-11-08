@@ -1,3 +1,4 @@
+import { icons } from "../../assets/icon";
 import { useAppSelector } from "../../redux";
 import CalcItem from "../CalcItem";
 import "./styles.css";
@@ -7,7 +8,10 @@ const HistoryBlock: React.FunctionComponent = () => {
 
   return (
     <div className="historyBlockContainer">
-      <div className="historyTitle">History</div>
+      <div className="historyTitle">
+        {icons.history}
+        History
+      </div>
       {calcList && (
         <div>
           {calcList.map((calc) => (

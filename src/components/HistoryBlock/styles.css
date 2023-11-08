@@ -3,11 +3,15 @@
    width: 300px;
    border: 1px solid black;
    border-radius: 5px;
-   background-color: white;
+   background: #D5CCFF;
 }
 
 .historyTitle {
    display: flex;
-   justify-content: center;
-   margin-top: 5px;
+   justify-content: left;
+   margin-top: 10px;
+   color: #2B1887;
+   gap: 10px;
+   padding: 5px;
+
 }
