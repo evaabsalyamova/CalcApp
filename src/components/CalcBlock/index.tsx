@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./styles.css";
 import OptionBlock from "../OptionBlock";
 import { addCalculation, useAppDispatch } from "../../redux";
@@ -28,7 +28,7 @@ const CalcBlock: React.FunctionComponent = () => {
     }
   }, [dispatch, number, number2, option, result]);
 
-  const handleEqualButtonClick = () => {
+  const handleEqualButtonClick = useCallback(() => {
     if (!number || !number2) {
       return;
     }
@@ -45,7 +45,7 @@ const CalcBlock: React.FunctionComponent = () => {
     if (option === "/") {
       setResult(convertResult(Number(number) / Number(number2)));
     }
-  };
+  }, [number, number2, option]);
 
   return (
     <div className="calcBlockContainer">
