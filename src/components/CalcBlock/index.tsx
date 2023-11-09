@@ -50,6 +50,7 @@ const CalcBlock: React.FunctionComponent = () => {
   return (
     <div className="calcBlockContainer">
       <input
+        className="enterValue"
         placeholder="Value"
         type="number"
         onChange={(enteredNum) => {
@@ -67,6 +68,7 @@ const CalcBlock: React.FunctionComponent = () => {
         />
       </div>
       <input
+        className="enterValue"
         placeholder="Value"
         type="number"
         onChange={(enteredNum) => {
@@ -75,7 +77,9 @@ const CalcBlock: React.FunctionComponent = () => {
         }}
         value={number2}
       />
-      <button onClick={handleEqualButtonClick}>=</button>
+      <button className="equalButton" onClick={handleEqualButtonClick}>
+        =
+      </button>
       {result && <div className="calcResult">{result}</div>}
     </div>
   );

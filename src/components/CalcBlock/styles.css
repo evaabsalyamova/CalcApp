@@ -8,3 +8,22 @@
 .calcResult {
    color: white;
 }
+
+.enterValue {
+   border: none;
+   background: radial-gradient(310.37% 153.86% at 140% 66.21%, #1F1E33 0%, #2A224F 87.18%);
+   border-bottom: 1px solid white;
+   color: white
+}
+
+.enterValue:focus {
+   outline: none;
+}
+
+.equalButton {
+   outline: none;
+   border: none;
+   color: white;
+   background: radial-gradient(310.37% 153.86% at 140% 66.21%, #1F1E33 0%, #2A224F 87.18%);
+
+}
