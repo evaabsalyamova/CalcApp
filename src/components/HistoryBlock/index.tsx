@@ -8,12 +8,12 @@ const HistoryBlock: React.FunctionComponent = () => {
 
   return (
     <div className="historyBlockContainer">
-      <div className="historyTitle">
+      <div className="historyBlockTitle">
         {icons.history}
         History
       </div>
       {calcList && (
-        <div>
+        <div className="historyBlockList">
           {calcList.map((calc) => (
             <CalcItem calc={calc} />
           ))}

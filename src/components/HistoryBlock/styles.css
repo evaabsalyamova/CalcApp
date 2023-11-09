@@ -2,11 +2,11 @@
    height: 300px;
    width: 300px;
    border: 1px solid black;
-   border-radius: 5px;
+   border-radius: 10px;
    background: #D5CCFF;
 }
 
-.historyTitle {
+.historyBlockTitle {
    display: flex;
    justify-content: left;
    margin-top: 10px;
@@ -14,4 +14,10 @@
    gap: 10px;
    padding: 5px;
 
+}
+
+.historyBlockList {
+   height: 250px;
+   width: 290px;
+   overflow: scroll;
 }
