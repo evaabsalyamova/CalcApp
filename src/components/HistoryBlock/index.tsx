@@ -3,7 +3,13 @@ import { useAppSelector } from "../../redux";
 import CalcItem from "../CalcItem";
 import "./styles.css";
 
-const HistoryBlock: React.FunctionComponent = () => {
+interface IProps {
+  onShowButtonClick: React.Dispatch<React.SetStateAction<number | undefined>>;
+}
+
+const HistoryBlock: React.FunctionComponent<IProps> = ({
+  onShowButtonClick,
+}) => {
   const calcList = useAppSelector((state) => state.calcList);
 
   return (
@@ -15,7 +21,11 @@ const HistoryBlock: React.FunctionComponent = () => {
       {calcList && (
         <div className="historyBlockList">
           {calcList.map((calc) => (
-            <CalcItem calc={calc} />
+            <CalcItem
+              calc={calc}
+              key={calc.id}
+              onShowButtonClick={onShowButtonClick}
+            />
           ))}
         </div>
       )}

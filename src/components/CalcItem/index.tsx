@@ -6,9 +6,13 @@ import { useMemo } from "react";
 
 interface IProps {
   calc: ICalc;
+  onShowButtonClick: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
-const CalcItem: React.FunctionComponent<IProps> = ({ calc }) => {
+const CalcItem: React.FunctionComponent<IProps> = ({
+  calc,
+  onShowButtonClick,
+}) => {
   const dispatch = useDispatch();
 
   const handleDeleteButtonClick = (): void => {
@@ -26,7 +30,9 @@ const CalcItem: React.FunctionComponent<IProps> = ({ calc }) => {
           {`${calc.value1} ${calc.symbol} ${value2} = ${calc.result}`}
         </div>
         <div className="calcButtons">
-          <div>{icons.showResult}</div>
+          <div onClick={() => onShowButtonClick(calc.id)}>
+            {icons.showResult}
+          </div>
           <div onClick={handleDeleteButtonClick}>{icons.delete}</div>
         </div>
       </div>
