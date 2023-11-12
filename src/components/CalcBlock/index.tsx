@@ -74,12 +74,13 @@ const CalcBlock: React.FunctionComponent<IProps> = ({ currCalcId }) => {
       <input
         className="enterValue"
         placeholder="Value"
-        type="number"
         onChange={(enteredNum) => {
-          setResult(undefined);
-          setNumber(enteredNum.target.value);
+          if (!isNaN(Number(enteredNum.target.value))) {
+            setNumber(enteredNum.target.value);
+            setResult(undefined);
+          }
         }}
-        value={number}
+        value={number ?? ""}
       />
       <div>
         <OptionBlock
@@ -93,12 +94,13 @@ const CalcBlock: React.FunctionComponent<IProps> = ({ currCalcId }) => {
       <input
         className="enterValue"
         placeholder="Value"
-        type="number"
         onChange={(enteredNum) => {
-          setResult(undefined);
-          setNumber2(enteredNum.target.value);
+          if (!isNaN(Number(enteredNum.target.value))) {
+            setNumber2(enteredNum.target.value);
+            setResult(undefined);
+          }
         }}
-        value={number2}
+        value={number2 ?? ""}
       />
       <button className="equalButton" onClick={handleEqualButtonClick}>
         =
