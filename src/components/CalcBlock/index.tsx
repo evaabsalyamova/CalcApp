@@ -7,7 +7,7 @@ interface IProps {
   currCalcId: number | undefined;
 }
 
-const convertResult = (e: number): string => {
+export const convertResult = (e: number): string => {
   return (Math.round(e * 100) / 100).toString();
 };
 
